@@ -10,7 +10,19 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
     private String isbn;
+
+    @ManyToOne
+    private Publisher publisher;
 
     public Book(String title, String isbn) {
         this.title = title;
